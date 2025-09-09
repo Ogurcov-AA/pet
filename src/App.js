@@ -3,7 +3,6 @@ import { PointerLockControls, Sky } from '@react-three/drei'
 import { Physics } from '@react-three/cannon'
 import Room from './components/room/Room'
 import {FirstPersonControls} from './components/room/FirstPersonControls'
-import EditorScene from "./components/room/EditorScene";
 
 function App() {
     return (

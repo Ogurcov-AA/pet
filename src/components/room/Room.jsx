@@ -1,14 +1,11 @@
 import { useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
 import { useFrame } from '@react-three/fiber'
-import {useRef} from "react";
 import floor from '../../assets/textures/floor.png'
 import wall from '../../assets/textures/wall.png'
 import window from '../../assets/textures/window.png'
-import EditorScene from "./EditorScene";
 
 function Room() {
-    const controlsRef = useRef()
 
     // Загрузка текстур
     const floorTexture = useLoader(TextureLoader, floor)
