@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Canvas } from '@react-three/fiber'
+import { PointerLockControls, Sky } from '@react-three/drei'
+import { Physics } from '@react-three/cannon'
+import Room from './components/room/Room'
+import {FirstPersonControls} from './components/room/FirstPersonControls'
+import EditorScene from "./components/room/EditorScene";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div style={{ width: '100vw', height: '100vh' }}>
+            {/*<EditorScene/>*/}
+            <Canvas>
+                <Sky sunPosition={[100, 100, 20]} />
+                <ambientLight intensity={0.3} />
+                <pointLight position={[10, 10, 10]} />
+
+                <Physics>
+                    <PointerLockControls />
+                    <FirstPersonControls />
+                    <Room />
+                </Physics>
+            </Canvas>
+        </div>
+    )
 }
 
 export default App;

@@ -1,0 +1,28 @@
+.room-designer {
+    padding: 20px;
+}
+
+.tools {
+    margin-bottom: 20px;
+}
+
+.tools button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.tools button.active {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+.objects-list {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}

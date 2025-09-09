@@ -1,0 +1,235 @@
+/* AdvancedRoomDesigner.css */
+.advanced-room-designer {
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ffffff;
+}
+
+.tabs {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 30px;
+}
+
+.tabs button {
+    padding: 15px 25px;
+    border: none;
+    background: none;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tabs button:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tabs button.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.room-shape-editor {
+    padding: 20px;
+}
+
+.editor-controls {
+    margin-bottom: 20px;
+}
+
+.editor-controls h3 {
+    margin: 0 0 15px 0;
+    color: #e0e0e0;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.control-buttons button {
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-buttons button:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+}
+
+.control-buttons button.active {
+    background: rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.editor-canvas {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wall-properties {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wall-properties h4 {
+    margin: 0 0 10px 0;
+    color: #e0e0e0;
+}
+
+.wall-properties p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    border: none !important;
+    margin-top: 10px;
+}
+
+.editor-help {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-help h4 {
+    margin: 0 0 10px 0;
+    color: #e0e0e0;
+}
+
+.editor-help ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.editor-help li {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.walls-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.shape-properties {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shape-properties h4 {
+    margin: 0 0 15px 0;
+    color: #e0e0e0;
+}
+
+.shape-properties p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.preset-shapes {
+    margin-top: 15px;
+}
+
+.preset-shapes h5 {
+    margin: 0 0 10px 0;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.preset-shapes button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 12px;
+}
+
+.preset-shapes button:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .tabs {
+        padding: 0 15px;
+    }
+
+    .tabs button {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .room-shape-editor {
+        padding: 15px;
+    }
+
+    .editor-controls h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .control-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Анимации */
+@keyframes wallPulse {
+    0% { stroke-opacity: 0.6; }
+    50% { stroke-opacity: 0.8; }
+    100% { stroke-opacity: 0.6; }
+}
+
+.walls-overlay polyline {
+    animation: wallPulse 2s ease-in-out infinite;
+}
